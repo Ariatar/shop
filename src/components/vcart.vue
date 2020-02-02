@@ -17,7 +17,18 @@
       :cartproductitems="item"
       v-for="(item, index) in cartproduct"
       :key="item.article"
+      @decrement="decrementItem(index)"
+      @increment="incrementItem(index)"
     />
+
+    <v-card v-if="cartproduct.length" elevation="12" class="red text-center" height="150">
+      <v-flex offset-md4>
+        <v-card-title class="display-3">Total Costnade:</v-card-title>
+      </v-flex>
+      <v-flex>
+        <v-card-subtitle class="display-1 white--text">{{totalCostnade}}</v-card-subtitle>
+      </v-flex>
+    </v-card>
   </v-container>
 </template>
 
@@ -38,9 +49,25 @@ export default {
     vcartitem
   },
   methods: {
-    ...mapActions(["removeFromCart"]),
+    ...mapActions(["removeFromCart", "decrement", "increment"]),
     deleteCart(index) {
       this.removeFromCart(index);
+    },
+    decrementItem(index) {
+      this.decrement(index);
+    },
+    incrementItem(index) {
+      this.increment(index);
+    }
+  },
+  computed: {
+    totalCostnade() {
+      let result = [];
+      for (let item of this.cartproduct) {
+        result.push(item.price * item.quantity);
+      }
+      result = result.reduce((sum, el) => sum + el, 0);
+      return result;
     }
   }
 };

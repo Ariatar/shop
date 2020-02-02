@@ -1,14 +1,14 @@
 <template>
-  <v-container>
-    <v-flex offset-lg12>
-      <div>
-        <v-btn :to="{name: 'cart', params: {cartproduct: getCarts}}" class="ml-12">
-          <h2 class="mr-2">Cart:</h2>
-          {{getCarts.length}}
-          <v-icon class="red--text">mdi-heart</v-icon>
-        </v-btn>
-      </div>
-    </v-flex>
+  <v-container class="mt-12">
+    <v-app-bar dark app>
+      <v-toolbar-title>Entligen</v-toolbar-title>
+      <v-spacer></v-spacer>
+
+      <v-btn class="red--text" dark :to="{name: 'cart', params: {cartproduct: getCarts}}" text>
+        <h2>Cart: {{getCarts.length}}</h2>
+      </v-btn>
+    </v-app-bar>
+    <div></div>
 
     <v-layout>
       <v-flex>

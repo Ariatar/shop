@@ -1,10 +1,5 @@
 <template>
   <v-container>
-    <v-layout row wrap>
-      <v-flex class="text-center">
-        <div>Hello Vue</div>
-      </v-flex>
-    </v-layout>
     <keep-alive>
       <router-view />
     </keep-alive>
