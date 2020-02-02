@@ -4,11 +4,11 @@
       <v-flex>
         <v-card class="yellow">
           <v-layout>
-            <v-flex md3>
+            <v-flex xs12 md3>
               <v-img height="200px" :src="cartproductitems.image"></v-img>
             </v-flex>
 
-            <v-flex offset-md5 md9>
+            <v-flex xs12 offset-md5 md9>
               <div>
                 <v-card-title>{{ cartproductitems.name }}</v-card-title>
                 <v-card-subtitle>
@@ -39,8 +39,6 @@
 
 
 <script>
-
-
 export default {
   props: {
     cartproductitems: {

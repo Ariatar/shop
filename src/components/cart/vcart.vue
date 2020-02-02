@@ -12,15 +12,6 @@
       class="display-3 text-center italic"
       v-if="!cartproduct.length"
     >There are no item in the Cart...</div>
-    <vcartitem
-      @deleteCart="deleteCart(index)"
-      :cartproductitems="item"
-      v-for="(item, index) in cartproduct"
-      :key="item.article"
-      @decrement="decrementItem(index)"
-      @increment="incrementItem(index)"
-    />
-
     <v-card v-if="cartproduct.length" elevation="12" class="red text-center" height="150">
       <v-flex offset-md4>
         <v-card-title class="display-3">Total Costnade:</v-card-title>
@@ -29,6 +20,14 @@
         <v-card-subtitle class="display-1 white--text">{{totalCostnade}}</v-card-subtitle>
       </v-flex>
     </v-card>
+    <vcartitem
+      @deleteCart="deleteCart(index)"
+      :cartproductitems="item"
+      v-for="(item, index) in cartproduct"
+      :key="item.article"
+      @decrement="decrementItem(index)"
+      @increment="incrementItem(index)"
+    />
   </v-container>
 </template>
 
