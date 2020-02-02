@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import vcartitem from "@/components/vcartitem.vue";
+import vcartitem from "./vcartitem";
 import { mapActions, mapGetters } from "vuex";
 
 export default {

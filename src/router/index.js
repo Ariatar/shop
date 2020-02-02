@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import vcart from "@/components/vcart.vue";
-import vcatalog from "@/components/vcatalog.vue";
+import vcart from "@/components/cart/vcart.vue";
+import vcatalog from "@/components/catalog/vcatalog.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
